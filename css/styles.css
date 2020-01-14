@@ -40,7 +40,8 @@ body {
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 0.54em 3.5em;
+
+  padding: 0.54em 4.5em;
   align-items: center;
   font-size: 14px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.14);
@@ -51,7 +52,6 @@ body {
 
 .logo {
   display: flex;
-  flex-basis: 200px;
 }
 
 .google-logo-right {
@@ -71,12 +71,12 @@ body {
 .menu {
   display: flex;
   justify-content: space-around;
+  text-align: right;
 }
 
 .menu li {
   list-style: none;
   text-transform: uppercase;
-  justify-content: space-evenly;
 }
 
 .menu a {
@@ -99,6 +99,13 @@ body {
   padding: 20px 60px 48px;
 }
 
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #dadce0;
+  border-radius: 48px;
+}
 /*--------------------- fonts-cards */
 
 /* .font-cards {
