@@ -1,0 +1,126 @@
+/*
+Table of Contents
+  - Variables
+  - Global
+  - Header 
+    - Logo
+    - Nav
+  - Main 
+    - Toolbar
+    - font-cards 
+  - Footer
+
+*/
+
+/* ----------------------------------------------- Variables */
+
+:root {
+  /* colors */
+  --gray-color: #5f6368;
+  --red-color: #ff5252;
+}
+
+/* ----------------------------------------------- Global */
+
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* ----------------------------------------------- Header with minor nav */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.54em 3.5em;
+  align-items: center;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+  /* margin-bottom: 20px; */
+}
+
+/*--------------------- logo */
+
+.logo {
+  display: flex;
+  flex-basis: 200px;
+}
+
+.google-logo-right {
+  padding-left: 2px;
+  font-size: 20px;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  color: var(--gray-color);
+}
+
+/*--------------------- nav */
+.header-nav {
+  flex-basis: 400px;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu li {
+  list-style: none;
+  text-transform: uppercase;
+  justify-content: space-evenly;
+}
+
+.menu a {
+  color: var(--gray-color);
+  font-weight: 400;
+  text-decoration: none;
+}
+.menu a.is-active,
+.menu a:hover {
+  color: var(--red-color);
+}
+
+/* ----------------------------------------------- Main  */
+
+/*--------------------- Toolbar */
+.main {
+  max-width: 1440px;
+  flex: 1;
+  bottom: 48px;
+  padding: 20px 60px 48px;
+}
+
+/*--------------------- fonts-cards */
+
+/* .font-cards {
+  
+} */
+
+/* ----------------------------------------------- Footer */
+
+.footer {
+  width: 100%;
+  border-top: 0.5px solid rgba(0, 0, 0, 0.14);
+  text-align: center;
+  font-size: 12px;
+  background: linear-gradient(
+    0deg,
+    rgba(177, 177, 177, 1) 0%,
+    rgba(247, 247, 247, 1) 50%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+.footer p {
+  margin: 0;
+  padding: 20px 0;
+}
