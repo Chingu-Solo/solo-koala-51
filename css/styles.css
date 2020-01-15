@@ -26,9 +26,6 @@ html,
 body {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
   -webkit-box-sizing: border-box;
@@ -40,26 +37,29 @@ body {
 .header {
   display: flex;
   justify-content: space-between;
-
+  white-space: nowrap;
   padding: 0.54em 4.5em;
   align-items: center;
   font-size: 14px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.14);
-  /* margin-bottom: 20px; */
 }
 
 /*--------------------- logo */
 
-.logo {
-  display: flex;
+.logo a {
+  text-decoration: none;
+}
+
+.google-logo-left {
+  vertical-align: middle;
 }
 
 .google-logo-right {
-  padding-left: 2px;
-  font-size: 20px;
-  font-family: "Lato", sans-serif;
+  position: relative;
+  top: 1px;
+  font-size: 22px;
+  font-family: "Public Sans", sans-serif;
   font-weight: 300;
-  letter-spacing: -0.01em;
   color: var(--gray-color);
 }
 
@@ -93,18 +93,113 @@ body {
 
 /*--------------------- Toolbar */
 .main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   max-width: 1440px;
+  margin: 0 auto;
   flex: 1;
-  bottom: 48px;
   padding: 20px 60px 48px;
 }
 
 .toolbar {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  height: 44px;
   border: 1px solid #dadce0;
   border-radius: 48px;
+}
+
+.search-bar {
+  width: 350px;
+  display: flex;
+  min-width: 150px;
+  justify-content: flex-start;
+  border-right: 1px solid #dadce0;
+}
+
+.search-button {
+  padding: 12px;
+  align-self: center;
+}
+.input {
+  width: 100%;
+  position: relative;
+  height: 42px;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.87);
+  outline: none;
+  border: none;
+}
+
+.custom-text {
+  width: 350px;
+}
+
+#custom-text {
+  min-width: 100px;
+  padding-left: 12px;
+  border-right: 1px solid #dadce0;
+}
+
+select {
+  margin: 0 20px;
+  height: 100%;
+  background-color: #fff;
+  outline: none;
+  border: none;
+}
+
+.font-size {
+  width: 30%;
+  height: 100%;
+}
+
+.page-custom-buttons {
+  height: 100%;
+  display: flex;
+  max-width: 140;
+  align-items: center;
+  border-left: 1px solid #dadce0;
+}
+
+.theme-chooser {
+  position: relative;
+  height: 50%;
+  padding: 12px;
+  align-self: center;
+}
+
+.theme-chooser::before {
+  content: "";
+  display: block;
+  background: #dadce0;
+  position: absolute;
+  height: 30px;
+  right: -1px;
+  width: 1px;
+  top: 8px;
+}
+
+.view-chooser {
+  position: relative;
+  padding: 0 12px;
+  margin: 12px 0;
+}
+
+.view-chooser::before {
+  content: "";
+  display: block;
+  background: #dadce0;
+  position: absolute;
+  height: 30px;
+  right: 0px;
+  width: 1px;
+  top: -4px;
+}
+
+.reset-button {
+  margin: 12px 12px 12px 12px;
 }
 /*--------------------- fonts-cards */
 
