@@ -18,4 +18,3 @@ slider.addEventListener("mousemove", () => {
   slider.style.background = color;
 });
 
-console.log("hello");
