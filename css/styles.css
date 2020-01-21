@@ -200,7 +200,7 @@ select {
   align-self: center;
   -webkit-appearance: none;
   width: 50%;
-  height: 1px;
+  height: 1.5px;
   background: linear-gradient(90deg, rgb(255, 212, 211), rgb(255, 212, 211));
   outline: none;
   border-radius: 12px;

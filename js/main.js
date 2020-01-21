@@ -1,20 +1,21 @@
-let slider = document.querySelector("#range");
-let output = document.querySelector("#font-size option");
+let slider = document.querySelector(".slider");
+let fontSize = document.querySelector("#font-size option");
 
-output.innerHTML = slider.value + "px";
+fontSize.innerHTML = slider.value + "px";
 
 slider.oninput = function() {
-  output.innerHTML = this.value + "px";
+  fontSize.innerHTML = this.value + "px";
+  console.log(fontSize);
 };
 
 slider.addEventListener("mousemove", () => {
-  let x = slider.value;
+  let fontValue = slider.value;
+  let percentage = (fontValue / 300) * 100;
   let color =
     "linear-gradient(90deg, rgb(223, 42, 42)" +
-    x +
+    percentage +
     "%, rgb(255,212,211)" +
-    x +
+    percentage +
     "%)";
   slider.style.background = color;
 });
-
