@@ -1,14 +1,24 @@
-let slider = document.querySelector(".slider");
+let slider = document.querySelector("#slider");
+let font = document.querySelector("#font-size");
 let fontSize = document.querySelector("#font-size option");
-
-fontSize.innerHTML = slider.value + "px";
 
 slider.oninput = function() {
   fontSize.innerHTML = this.value + "px";
-  console.log(fontSize);
+};
+
+font.onchange = () => {
+  if (font.value !== "8px") {
+    let fontOption = font.value;
+    slider.value = fontOption;
+  }
+  updateSlider();
 };
 
 slider.addEventListener("mousemove", () => {
+  updateSlider();
+});
+
+function updateSlider() {
   let fontValue = slider.value;
   let percentage = (fontValue / 300) * 100;
   let color =
@@ -18,4 +28,4 @@ slider.addEventListener("mousemove", () => {
     percentage +
     "%)";
   slider.style.background = color;
-});
+}
