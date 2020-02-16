@@ -34,14 +34,35 @@ body {
 
 /* ----------------------------------------------- Header with minor nav */
 
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  transform: translate(-100%, -100%);
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.6s, transform 0.2s 0.6s;
+}
+
 .header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   white-space: nowrap;
-  padding: 0.54em 4.5em;
+  padding: 0em 4.5em;
   align-items: center;
   font-size: 14px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+  height: 64px;
+}
+
+.header-menu-btn {
+  display: none;
+  padding: 12px 20px;
 }
 
 /*--------------------- logo */
@@ -66,6 +87,10 @@ body {
 /*--------------------- nav */
 .header-nav {
   flex-basis: 400px;
+}
+
+.header-nav .logo {
+  display: none;
 }
 
 .menu {
@@ -106,7 +131,7 @@ body {
   display: flex;
   justify-content: space-between;
   height: 44px;
-  border: 1px solid #dadce0;
+  border: 1px solid rgba(0, 0, 0, 0.14);
   border-radius: 48px;
 }
 
@@ -122,6 +147,7 @@ body {
   padding: 12px;
   align-self: center;
 }
+
 .input {
   width: 100%;
   position: relative;
@@ -134,12 +160,13 @@ body {
 
 .custom-text {
   width: 100%;
-  min-width: 110px;
+  min-width: 80px;
+  overflow: hidden;
   position: relative;
   height: 42px;
   padding-left: 12px;
   margin-right: 12px;
-  overflow: hidden;
+  color: rgb(255, 249, 181);
 }
 
 .custom-text .input {
@@ -149,6 +176,9 @@ body {
   color: #595f6e;
   border: none;
   outline: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .custom-text label {
@@ -177,7 +207,7 @@ body {
 
 .font-size {
   width: 500px;
-  min-width: 200px;
+  min-width: 80px;
   display: flex;
   justify-content: space-around;
   border-left: 1px solid #dadce0;
@@ -197,6 +227,7 @@ select {
 }
 
 .slider {
+  display: block;
   align-self: center;
   -webkit-appearance: none;
   width: 50%;
@@ -313,4 +344,101 @@ select {
 .footer p {
   margin: 0;
   padding: 20px 0;
+}
+
+@media screen and (max-width: 840px) {
+  .header {
+    height: 56px;
+  }
+  .main {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .font-size {
+    width: 80px;
+  }
+  .slider {
+    display: none;
+  }
+}
+@media screen and (max-width: 661px) {
+  .main {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .header-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 320px;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    z-index: 2;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    transform: translateX(-100%);
+    box-shadow: 4px 4px 12px 2px rgba(0, 0, 0, 0.14);
+    transition: transform 0.4s ease-in;
+  }
+
+  .header-nav.is-active {
+    transform: translateX(0%);
+  }
+
+  body.is-active::before {
+    background-color: rgba(0, 0, 0, 0.4);
+    transform: translate(0%, 0%);
+    opacity: 0.8;
+    z-index: 1;
+    transition: opacity 0.6s;
+  }
+
+  .header-nav .logo {
+    display: initial;
+    padding: 0.9em 2.5em;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+  }
+
+  .header-menu-btn {
+    display: initial;
+    cursor: pointer;
+  }
+
+  .header {
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+  }
+
+  .menu {
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: left;
+  }
+
+  .menu li {
+    height: 48px;
+    text-transform: none;
+  }
+
+  .toolbar .page-custom-buttons {
+    flex-basis: 8%;
+    border-left: 0;
+  }
+
+  .toolbar .search-bar {
+    width: 100%;
+    background-color: inherit;
+  }
+
+  .toolbar .custom-text,
+  .toolbar .font-size,
+  .theme-chooser,
+  .view-chooser {
+    display: none;
+  }
 }
