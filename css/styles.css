@@ -24,10 +24,12 @@ Table of Contents
 
 html,
 body {
+  position: relative;
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
+  min-height: 100vh;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -120,17 +122,17 @@ body::before {
 .main {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   max-width: 1440px;
-  margin: 0 auto;
+  margin: 0 auto 40px;
   flex: 1;
-  padding: 20px 60px 48px;
+  padding: 20px 60px 65px;
 }
 
 .toolbar {
   display: flex;
   justify-content: space-between;
   height: 44px;
+  margin-bottom: 20px;
   border: 1px solid rgba(0, 0, 0, 0.14);
   border-radius: 48px;
 }
@@ -322,16 +324,56 @@ select {
 }
 /*--------------------- fonts-cards */
 
-/* .font-cards {
-  
-} */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-auto-rows: 230px;
+  grid-gap: 40px;
+}
 
+article {
+  border-top: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.card-header {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-title {
+  flex: 0 0 auto;
+  margin: 12px 0 8px 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+.card-button {
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  margin-left: auto;
+}
+
+.card-subtitle {
+  flex: 0 0 100%;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.card-preview {
+}
 /* ----------------------------------------------- Footer */
 
 .footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 65px;
   border-top: 0.5px solid rgba(0, 0, 0, 0.14);
-  text-align: center;
   font-size: 12px;
   background: linear-gradient(
     0deg,
@@ -343,7 +385,6 @@ select {
 
 .footer p {
   margin: 0;
-  padding: 20px 0;
 }
 
 @media screen and (max-width: 840px) {
