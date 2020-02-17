@@ -202,7 +202,6 @@ body::before {
   border-bottom: 0px solid var(--red-color);
 }
 
-.custom-text .input:focus + .label-custom-text::after,
 .custom-text .input:focus + .label-custom-text::after {
   border-bottom: 2px solid var(--red-color);
 }
