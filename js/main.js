@@ -60,3 +60,19 @@ function hideShow() {
     }
   };
 }
+
+// Filter Font
+const $searchInput = document.querySelector(".input");
+$searchInput.addEventListener("keyup", e => {
+  const search_input = e.target.value.toLowerCase();
+  const $fonts = document.querySelectorAll("article");
+  Array.from($fonts).forEach(font => {
+    const $fontTitle = font.className.toLowerCase();
+
+    if ($fontTitle.indexOf(search_input) !== -1) {
+      font.style.display = "block";
+    } else {
+      font.style.display = "none";
+    }
+  });
+});
