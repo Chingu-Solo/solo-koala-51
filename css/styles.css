@@ -225,6 +225,7 @@ select {
   outline: none;
   border: none;
   background-color: #ffe3e3;
+  cursor: pointer;
 }
 
 .slider {
@@ -281,6 +282,7 @@ select {
   flex-basis: 12%;
   align-items: center;
   border-left: 1px solid #dadce0;
+  cursor: pointer;
 }
 
 .theme-chooser {
@@ -328,6 +330,7 @@ select {
   grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   grid-auto-rows: 230px;
   grid-gap: 40px;
+  word-wrap: break-word;
 }
 
 article {
@@ -361,6 +364,38 @@ article {
 }
 
 .card-preview {
+  font-size: 40px;
+}
+
+.roboto .card-preview {
+  font-family: "Roboto", sans-serif;
+}
+.odibe-sans .card-preview {
+  font-family: "Odibee Sans", cursive;
+}
+.open-sans .card-preview {
+  font-family: "Open Sans", sans-serif;
+}
+.source-sans-pro .card-preview {
+  font-family: "Source Sans Pro", sans-serif;
+}
+.roboto-mono .card-preview {
+  font-family: "Roboto Mono", monospace;
+}
+.ubuntu .card-preview {
+  font-family: "Ubuntu", sans-serif;
+}
+.pt-sans .card-preview {
+  font-family: "Lemonada", cursive;
+}
+.muli .card-preview {
+  font-family: "Muli", sans-serif;
+}
+.nunito .card-preview {
+  font-family: "Nunito", sans-serif;
+}
+.dancing-script .card-preview {
+  font-family: "Dancing Script", cursive;
 }
 /* ----------------------------------------------- Footer */
 
