@@ -62,7 +62,7 @@ function hideShow() {
 }
 
 // Filter Font
-const $searchInput = document.querySelector(".input");
+const $searchInput = document.querySelector("#search-font");
 $searchInput.addEventListener("keyup", e => {
   const search_input = e.target.value.toLowerCase();
   const $fonts = document.querySelectorAll("article");
@@ -74,5 +74,30 @@ $searchInput.addEventListener("keyup", e => {
     } else {
       font.style.display = "none";
     }
+  });
+});
+
+// Type somthing
+const $customText = document.querySelector("#custom-text");
+
+$customText.addEventListener("keyup", e => {
+  let custom_word = e.target.value;
+  const $textPreview = document.querySelectorAll(".card-preview");
+
+  Array.from($textPreview).forEach(text => {
+    text.textContent = custom_word;
+  });
+});
+
+const SENTENCE = "All their equipment and instruments are alive.";
+
+// reset Button
+const $resetBtn = document.querySelector(".reset-button");
+const $textPreview = document.querySelectorAll(".card-preview");
+// console.log($textPreview);
+
+$resetBtn.addEventListener("click", () => {
+  Array.from($textPreview).forEach(text => {
+    text.textContent = SENTENCE;
   });
 });
