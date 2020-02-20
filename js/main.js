@@ -118,7 +118,6 @@ $slider.addEventListener("mousemove", () => {
 
 function updateSlider() {
   let fontValue = $slider.value;
-  console.log(fontValue);
   let percentage = (fontValue / 300) * 100;
   let color =
     "linear-gradient(90deg, rgb(223, 42, 42)" +
@@ -130,10 +129,37 @@ function updateSlider() {
 }
 
 //Dark Theme
+const $themeButton = document.querySelector(".theme-chooser");
+let theme = document.documentElement.dataset.theme;
 
+$themeButton.addEventListener("click", () => {
+  if (theme === "light") {
+    document.documentElement.setAttribute("data-theme", "dark");
+  } else {
+    document.documentElement.setAttribute("data-theme", "light");
+  }
+});
 
+$themeButton.addEventListener("click", () => {
+  if (theme === "dark") {
+    theme = "light";
+  } else {
+    theme = "dark";
+  }
+});
 
+let searchIcon = document.querySelector(".search-button img");
+let paintBucketIcon = document.querySelector(".theme-chooser img");
+let viewIcon = document.querySelector(".view-chooser img");
+let resetIcon = document.querySelector(".reset-button img");
 
+//Dark Icons
+$themeButton.addEventListener("click", () => {
+  searchIcon.src = "images/white-search-icon.svg";
+  paintBucketIcon.src = "images/white-paint-icon.svg";
+  viewIcon.src = "images/white-view-icon.svg";
+  resetIcon.src = "images/white-reset-icon.svg";
+});
 
 // Grid and List View
 
