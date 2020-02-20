@@ -25,6 +25,7 @@ init();
 function init() {
   filterFont();
   previewText();
+  returnDefaultText();
   reset();
 }
 
@@ -34,6 +35,7 @@ function reset() {
     returnDefaultFonts();
     $searchInput.value = "";
     $customText.value = "";
+    resetFontSize();
   });
 }
 
@@ -65,7 +67,6 @@ function previewText() {
     Array.from($textPreview).forEach(text => {
       if (custom_word === "") {
         returnDefaultText();
-        text.style.fontSize = "40px";
       } else {
         text.textContent = custom_word;
       }
@@ -79,34 +80,33 @@ function returnDefaultText() {
   }
 }
 
-returnDefaultText();
-
 //Font Size
 $selectFont.addEventListener("change", () => {
-  let fontValue = $selectFont.options[$selectFont.selectedIndex].value + "px";
-  console.log(fontValue);
   Array.from($textPreview).forEach(text => {
+    let fontValue = $selectFont.options[$selectFont.selectedIndex].value + "px";
     text.style.fontSize = fontValue;
   });
 });
 
-//Dark Theme
-
-// Grid and List View
+function resetFontSize() {
+  Array.from($textPreview).forEach(text => {
+    $selectFont.options[6].selected = "true";
+    text.style.fontSize = "40px";
+  });
+}
 
 // Slider Functionality
 
 let $slider = document.querySelector("#slider");
-let $font = document.querySelector("#font-size");
 let $fontSize = document.querySelector("#font-size option");
 
 $slider.oninput = function() {
   $fontSize.innerHTML = this.value + "px";
 };
 
-$font.onchange = () => {
-  if ($font.value !== "8px") {
-    let $fontOption = $font.value;
+$selectFont.onchange = () => {
+  if ($selectFont.value !== "8px") {
+    let $fontOption = $selectFont.value;
     $slider.value = $fontOption;
   }
   updateSlider();
@@ -118,6 +118,7 @@ $slider.addEventListener("mousemove", () => {
 
 function updateSlider() {
   let fontValue = $slider.value;
+  console.log(fontValue);
   let percentage = (fontValue / 300) * 100;
   let color =
     "linear-gradient(90deg, rgb(223, 42, 42)" +
@@ -127,6 +128,14 @@ function updateSlider() {
     "%)";
   $slider.style.background = color;
 }
+
+//Dark Theme
+
+
+
+
+
+// Grid and List View
 
 // Responsive navigation
 const smallScreens = window.matchMedia("screen and (max-width: 661px)");
