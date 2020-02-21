@@ -5,6 +5,7 @@ const $fonts = document.querySelectorAll("article");
 const $textPreview = document.querySelectorAll(".card-preview");
 const $resetBtn = document.querySelector(".reset-button");
 const $selectFont = document.querySelector("#font-size");
+const $themeButton = document.querySelector(".theme-chooser");
 
 const SENTENCES = [
   "All their equipment and instruments are alive.",
@@ -129,38 +130,44 @@ function updateSlider() {
 }
 
 //Dark Theme
-const $themeButton = document.querySelector(".theme-chooser");
-let theme = document.documentElement.dataset.theme;
-
 $themeButton.addEventListener("click", () => {
+  let theme = document.documentElement.dataset.theme;
   if (theme === "light") {
     document.documentElement.setAttribute("data-theme", "dark");
+    theme = "dark";
   } else {
     document.documentElement.setAttribute("data-theme", "light");
-  }
-});
-
-$themeButton.addEventListener("click", () => {
-  if (theme === "dark") {
     theme = "light";
-  } else {
-    theme = "dark";
   }
+  toogleIcons();
 });
-
-let searchIcon = document.querySelector(".search-button img");
-let paintBucketIcon = document.querySelector(".theme-chooser img");
-let viewIcon = document.querySelector(".view-chooser img");
-let resetIcon = document.querySelector(".reset-button img");
 
 //Dark Icons
-$themeButton.addEventListener("click", () => {
-  searchIcon.src = "images/white-search-icon.svg";
-  paintBucketIcon.src = "images/white-paint-icon.svg";
-  viewIcon.src = "images/white-view-icon.svg";
-  resetIcon.src = "images/white-reset-icon.svg";
-});
+let iconTracker = "false";
 
+function toogleIcons() {
+  let googleIcon = document.querySelector(".google-logo-left img");
+  let searchIcon = document.querySelector(".search-button img");
+  let paintBucketIcon = document.querySelector(".theme-chooser img");
+  let viewIcon = document.querySelector(".view-chooser img");
+  let resetIcon = document.querySelector(".reset-button img");
+
+  if (iconTracker) {
+    googleIcon.src = "images/white-google-logo.svg";
+    searchIcon.src = "images/white-search-icon.svg";
+    paintBucketIcon.src = "images/white-paint-icon.svg";
+    viewIcon.src = "images/white-list-view-icon.svg";
+    resetIcon.src = "images/white-reset-icon.svg";
+    iconTracker = false;
+  } else {
+    googleIcon.src = "images/google-logo.svg";
+    searchIcon.src = "images/dark-search-icon.svg";
+    paintBucketIcon.src = "images/dark-paint-icon.svg";
+    viewIcon.src = "images/dark-list-view-icon.svg";
+    resetIcon.src = "images/dark-reset-icon.svg";
+    iconTracker = true;
+  }
+}
 // Grid and List View
 
 // Responsive navigation
