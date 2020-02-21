@@ -1,5 +1,6 @@
 // Toolbar Functionalities
 const $searchInput = document.querySelector("#search-font");
+const $searchCloseBtn = document.querySelector(".search-close-button");
 const $customText = document.querySelector("#custom-text");
 const $fonts = document.querySelectorAll("article");
 const $textPreview = document.querySelectorAll(".card-preview");
@@ -25,6 +26,7 @@ init();
 
 function init() {
   filterFont();
+  closeButton();
   previewText();
   returnDefaultText();
   reset();
@@ -36,6 +38,7 @@ function reset() {
     returnDefaultFonts();
     $searchInput.value = "";
     $customText.value = "";
+    $searchCloseBtn.style.display = "none";
     resetFontSize();
   });
 }
@@ -43,7 +46,8 @@ function reset() {
 // Filter Font
 function filterFont() {
   $searchInput.addEventListener("keyup", e => {
-    const search_input = e.target.value.toLowerCase();
+    let search_input = e.target.value.toLowerCase();
+    $searchCloseBtn.style.display = "block";
     Array.from($fonts).forEach(font => {
       const $fontTitle = font.className.toLowerCase();
       if ($fontTitle.indexOf(search_input) !== -1) {
@@ -53,6 +57,25 @@ function filterFont() {
       }
     });
   });
+}
+
+function closeButton() {
+  if ($searchInput !== "") {
+    $searchCloseBtn.addEventListener("click", () => {
+      $searchInput.value = "";
+      $searchCloseBtn.style.display = "none";
+      Array.from($fonts).forEach(font => {
+        const $fontTitle = font.className.toLowerCase();
+        if ($fontTitle.indexOf($searchInput.value) !== "") {
+          font.style.display = "block";
+        } else {
+          font.style.display = "none";
+        }
+      });
+    });
+  } else {
+    $searchCloseBtn.style.display = "block";
+  }
 }
 
 function returnDefaultFonts() {
@@ -146,6 +169,7 @@ $themeButton.addEventListener("click", () => {
 let iconTracker = "false";
 
 function toogleIcons() {
+  let menuButton = document.querySelector(".header-menu-btn img");
   let googleIcon = document.querySelector(".google-logo-left img");
   let searchIcon = document.querySelector(".search-button img");
   let paintBucketIcon = document.querySelector(".theme-chooser img");
@@ -153,6 +177,7 @@ function toogleIcons() {
   let resetIcon = document.querySelector(".reset-button img");
 
   if (iconTracker) {
+    menuButton.src = "images/white-menu-button.svg";
     googleIcon.src = "images/white-google-logo.svg";
     searchIcon.src = "images/white-search-icon.svg";
     paintBucketIcon.src = "images/white-paint-icon.svg";
@@ -160,6 +185,7 @@ function toogleIcons() {
     resetIcon.src = "images/white-reset-icon.svg";
     iconTracker = false;
   } else {
+    menuButton.src = "images/header-menu-btn.svg";
     googleIcon.src = "images/google-logo.svg";
     searchIcon.src = "images/dark-search-icon.svg";
     paintBucketIcon.src = "images/dark-paint-icon.svg";
