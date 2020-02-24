@@ -64,6 +64,30 @@ function reset() {
   });
 }
 
+//Scroll to top
+const $toTopBtn = document.querySelector(".back-to-top");
+
+window.onscroll = function() {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20)
+    $toTopBtn.style.display = "block";
+  else {
+    $toTopBtn.style.display = "none";
+  }
+}
+
+$toTopBtn.addEventListener("click", function() {
+  topFunction();
+});
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
 // Filter Font
 function filterFont() {
   $searchInput.addEventListener("keyup", e => {

@@ -50,6 +50,7 @@ body {
   box-sizing: border-box;
   background-color: var(--bg-color);
   color: var(--text-color);
+  scroll-behavior: smooth;
 }
 
 /* ----------------------------------------------- Header with minor nav */
@@ -455,6 +456,36 @@ article {
 .dancing-script .card-preview {
   font-family: "Dancing Script", cursive;
 }
+/* ----------------------------------------------- Back to Top button */
+
+.back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 90px;
+  right: 40px;
+  z-index: 999;
+}
+
+.back-to-top-btn {
+  width: 45px;
+  height: 45px;
+  line-height: 50px;
+  border-radius: 50%;
+  font-size: 25px;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  outline: none;
+  background-color: white;
+  color: #5f6365;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.back-to-top-btn:hover {
+  background-color: rgb(0, 0, 0, 0.1);
+}
+
 /* ----------------------------------------------- Footer */
 
 .footer {
