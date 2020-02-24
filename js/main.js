@@ -1,5 +1,7 @@
 // Toolbar Functionalities
+const $googleIcon = document.querySelector(".google-logo-left");
 const $searchInput = document.querySelector("#search-font");
+const $searchBtn = document.querySelector(".search-button");
 const $searchCloseBtn = document.querySelector(".search-close-button");
 const $customText = document.querySelector("#custom-text");
 const $fonts = document.querySelectorAll("article");
@@ -7,7 +9,9 @@ const $textPreview = document.querySelectorAll(".card-preview");
 const $resetBtn = document.querySelector(".reset-button");
 const $selectFont = document.querySelector("#font-size");
 const $themeButton = document.querySelector(".theme-chooser");
-
+const $viewButton = document.querySelector(".view-chooser");
+let viewImage = document.querySelector("#view-img");
+const $cardsContainer = document.querySelector(".cards-container");
 const SENTENCES = [
   "All their equipment and instruments are alive.",
   "A red flare silhouetted the jagged edge of a wing.",
@@ -26,20 +30,37 @@ init();
 
 function init() {
   filterFont();
-  closeButton();
+  clearSearchBar();
   previewText();
   returnDefaultText();
+  activateDarkLightMode();
+  toggleGridList();
   reset();
 }
 
 function reset() {
   $resetBtn.addEventListener("click", () => {
     returnDefaultText();
+    resetFontSize();
     returnDefaultFonts();
     $searchInput.value = "";
     $customText.value = "";
     $searchCloseBtn.style.display = "none";
-    resetFontSize();
+    $searchBtn
+      .querySelector("img")
+      .setAttribute("src", "images/dark-search-icon.svg");
+    $cardsContainer.classList.remove("list-view");
+    document.documentElement.setAttribute("data-theme", "light");
+    $googleIcon
+      .querySelector("img")
+      .setAttribute("src", "images/google-logo.svg");
+    $themeButton
+      .querySelector("img")
+      .setAttribute("src", "images/dark-paint-icon.svg");
+    viewImage.src = "images/dark-list-view-icon.svg";
+    $resetBtn
+      .querySelector("img")
+      .setAttribute("src", "images/dark-reset-icon.svg");
   });
 }
 
@@ -56,10 +77,14 @@ function filterFont() {
         font.style.display = "none";
       }
     });
+    if (!e.target.value) {
+      $searchCloseBtn.style.display = "none";
+    }
   });
 }
 
-function closeButton() {
+//Clear search bar
+function clearSearchBar() {
   if ($searchInput !== "") {
     $searchCloseBtn.addEventListener("click", () => {
       $searchInput.value = "";
@@ -73,8 +98,6 @@ function closeButton() {
         }
       });
     });
-  } else {
-    $searchCloseBtn.style.display = "block";
   }
 }
 
@@ -152,35 +175,39 @@ function updateSlider() {
   $slider.style.background = color;
 }
 
+let theme = document.documentElement.dataset.theme;
+
 //Dark Theme
-$themeButton.addEventListener("click", () => {
-  let theme = document.documentElement.dataset.theme;
-  if (theme === "light") {
-    document.documentElement.setAttribute("data-theme", "dark");
-    theme = "dark";
-  } else {
-    document.documentElement.setAttribute("data-theme", "light");
-    theme = "light";
-  }
-  toogleIcons();
-});
+function activateDarkLightMode() {
+  $themeButton.addEventListener("click", () => {
+    if (theme === "light") {
+      document.documentElement.setAttribute("data-theme", "dark");
+      theme = "dark";
+    } else {
+      document.documentElement.setAttribute("data-theme", "light");
+      theme = "light";
+    }
+    toogleIcons();
+  });
+}
 
 //Dark Icons
 let iconTracker = "false";
-
 function toogleIcons() {
   let menuButton = document.querySelector(".header-menu-btn img");
   let googleIcon = document.querySelector(".google-logo-left img");
   let searchIcon = document.querySelector(".search-button img");
+  let searchCloseBtn = document.querySelector(".search-close-button img");
   let paintBucketIcon = document.querySelector(".theme-chooser img");
   let viewIcon = document.querySelector(".view-chooser img");
   let resetIcon = document.querySelector(".reset-button img");
 
   if (iconTracker) {
-    menuButton.src = "images/white-menu-button.svg";
     googleIcon.src = "images/white-google-logo.svg";
     searchIcon.src = "images/white-search-icon.svg";
+    searchCloseBtn.src = "images/white-close-search-icon.svg";
     paintBucketIcon.src = "images/white-paint-icon.svg";
+    viewIcon.src = "images/white-grid-view-icon.svg";
     viewIcon.src = "images/white-list-view-icon.svg";
     resetIcon.src = "images/white-reset-icon.svg";
     iconTracker = false;
@@ -188,13 +215,29 @@ function toogleIcons() {
     menuButton.src = "images/header-menu-btn.svg";
     googleIcon.src = "images/google-logo.svg";
     searchIcon.src = "images/dark-search-icon.svg";
+    searchCloseBtn.src = "images/dark-close-search-icon.svg";
     paintBucketIcon.src = "images/dark-paint-icon.svg";
+    viewIcon.src = "images/dark-grid-view-icon.svg";
     viewIcon.src = "images/dark-list-view-icon.svg";
     resetIcon.src = "images/dark-reset-icon.svg";
     iconTracker = true;
   }
 }
+
 // Grid and List View
+let imgSrcTracker = true;
+function toggleGridList() {
+  $viewButton.addEventListener("click", () => {
+    $cardsContainer.classList.toggle("list-view");
+    if (imgSrcTracker) {
+      viewImage.src = "images/dark-grid-view-icon.svg";
+      imgSrcTracker = false;
+    } else {
+      viewImage.src = "images/dark-list-view-icon.svg";
+      imgSrcTracker = true;
+    }
+  });
+}
 
 // Responsive navigation
 const smallScreens = window.matchMedia("screen and (max-width: 661px)");
