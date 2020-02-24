@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg id="master-artboard" viewBox="0 0 618.669677734375 623.7807006835938" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" style="enable-background:new 0 0 1400 980;" width="618.669677734375px" height="623.7807006835938px"><rect id="ee-background" x="0" y="0" width="618.669677734375" height="623.7807006835938" style="fill: white; fill-opacity: 0; pointer-events: none;"/>
+<svg id="master-artboard" viewBox="0 0 595.2064819335938 600.6611328125" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" style="enable-background:new 0 0 1400 980;" width="595.2064819335938px" height="600.6611328125px"><rect id="ee-background" x="0" y="0" width="595.2064819335938" height="600.6611328125" style="fill: white; fill-opacity: 0; pointer-events: none;"/>
 
 
-<g transform="matrix(6.352429389953613, 0, 0, 6.352429389953613, -3561.2027378082275, -693.65576171875)">
-	<path d="M 653.099976 113.900002 L 565.200012 201.800003" class="st0" style="fill: none; stroke: rgb(255, 255, 255); stroke-width: 12; stroke-miterlimit: 10;"/>
-	<path d="M 566.599976 115.300003 L 651.700012 200.399994" class="st0" style="fill: none; stroke: rgb(255, 255, 255); stroke-width: 12; stroke-miterlimit: 10;"/>
-</g>
+<g><g transform="matrix(1, 0, 0, 1, -553.388427734375, -96.69422149658203)">
+	<g><path d="M 653.099976 113.900002 L 565.200012 201.800003" class="st0" style="fill: none; stroke: rgb(255, 255, 255); stroke-width: 18; stroke-miterlimit: 10; stroke-opacity: 0.39;" transform="matrix(2.9293105602264404, 0, 0, 2.9293105602264404, -1075.23681640625, 89.6107406616211)"/><path d="M 566.599976 115.300003 L 651.700012 200.399994" class="st0" style="fill: none; stroke: rgb(255, 255, 255); stroke-width: 8; stroke-miterlimit: 10; stroke-opacity: 0.39;" transform="matrix(6.483316421508789, 0, 0, 6.483316421508789, -3099.17041015625, -624.5497436523438)"/></g>
+	
+<path d="M 566.11572265625 253.71902465820312 L 566.11572265625 253.71902465820312" style="fill-opacity: 1; stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 20; paint-order: stroke;"/><path d="M 1092.727294921875 134.71075439453125" style="fill-opacity: 1; stroke: rgb(255, 255, 255); stroke-opacity: 0.61; stroke-width: 20; paint-order: stroke;"/><path d="M 1158.181884765625 154.04959106445312 L 1158.181884765625 154.04959106445312" style="fill-opacity: 1; stroke: rgb(255, 255, 255); stroke-opacity: 0.61; stroke-width: 20; paint-order: stroke;"/><path d="M 595.6015014648438 679.3240966796875 L 595.6015014648438 679.3240966796875" style="fill-opacity: 1; stroke: rgb(255, 255, 255); stroke-opacity: 0.61; stroke-width: 18; paint-order: stroke;" transform="matrix(1, 0, 0, 1, 0.33333333333337123, 1.4248381654422246)"/></g><path d="M 653.099976 113.900002 L 565.200012 201.800003" class="st0" style="fill: none; stroke: rgb(255, 255, 255); stroke-width: 18; stroke-miterlimit: 10; stroke-opacity: 0.39;" transform="matrix(2.9293105602264404, 0, 0, 2.9293105602264404, -1333.9532470703125, -300.6465454101562)"/></g>
 
 
 
