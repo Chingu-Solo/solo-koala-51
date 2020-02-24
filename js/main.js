@@ -231,9 +231,15 @@ function toggleGridList() {
     $cardsContainer.classList.toggle("list-view");
     if (imgSrcTracker) {
       viewImage.src = "images/dark-grid-view-icon.svg";
+      if (theme === "dark") {
+        viewImage.src = "images/white-grid-view-icon.svg";
+      }
       imgSrcTracker = false;
     } else {
       viewImage.src = "images/dark-list-view-icon.svg";
+      if (theme === "dark") {
+        viewImage.src = "images/white-list-view-icon.svg";
+      }
       imgSrcTracker = true;
     }
   });
