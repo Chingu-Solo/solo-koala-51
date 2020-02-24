@@ -22,25 +22,25 @@ _Structure_
 
 _Style_
 
-- [ ] Sample text in each card should be displayed in the corresponding font
-- [ ] Buttons/links should be evident _(make sure the cursor changes, etc.)_
-- [ ] Implement a way to handle overflow from sample text in font cards, as the font size is adjustable
+- [x] Sample text in each card should be displayed in the corresponding font
+- [x] Buttons/links should be evident _(make sure the cursor changes, etc.)_
+- [x] Implement a way to handle overflow from sample text in font cards, as the font size is adjustable
 
 _Functionality_
 
-- [ ] Text typed into the custom text (type something) box should immediately change the sample text displayed in each font card
-- [ ] The sample text should return to the default sample if the input box (type something) no longer has any input _(ex. input == "")_
-- [ ] Font size chooser should have at least four sizes and should immediately change the sample text font size in each font card
-- [ ] Implement the clickable 'reset' icon on the far right of the major navigation; it should make the page appear as if the user reloaded the page _(do not actually reload the page)_
+- [x] Text typed into the custom text (type something) box should immediately change the sample text displayed in each font card
+- [x] The sample text should return to the default sample if the input box (type something) no longer has any input _(ex. input == "")_
+- [x] Font size chooser should have at least four sizes and should immediately change the sample text font size in each font card
+- [x] Implement the clickable 'reset' icon on the far right of the major navigation; it should make the page appear as if the user reloaded the page _(do not actually reload the page)_
 
 _Other_
 
-- [ ] Your repo needs to have a robust README.md
+- [x] Your repo needs to have a robust README.md
 - [ ] Make sure that there are no errors in the developer console before submitting
 
 **Extras (Not Required)**
 
 - [ ] Include a back-to-top button that allows users to scroll to the top once the top of the page is out of view
-- [ ] Make your design fully responsive _(small/large/portrait/landscape, etc.)_
-- [ ] Implement the light/dark mode toggle buttons
-- [ ] Implement the change display icon so you can flip between a grid and list layout for the font cards
+- [x] Make your design fully responsive _(small/large/portrait/landscape, etc.)_
+- [x] Implement the light/dark mode toggle buttons
+- [x] Implement the change display icon so you can flip between a grid and list layout for the font cards
