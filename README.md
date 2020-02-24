@@ -36,11 +36,11 @@ _Functionality_
 _Other_
 
 - [x] Your repo needs to have a robust README.md
-- [ ] Make sure that there are no errors in the developer console before submitting
+- [x] Make sure that there are no errors in the developer console before submitting
 
 **Extras (Not Required)**
 
-- [ ] Include a back-to-top button that allows users to scroll to the top once the top of the page is out of view
+- [x] Include a back-to-top button that allows users to scroll to the top once the top of the page is out of view
 - [x] Make your design fully responsive _(small/large/portrait/landscape, etc.)_
 - [x] Implement the light/dark mode toggle buttons
 - [x] Implement the change display icon so you can flip between a grid and list layout for the font cards
