@@ -9,6 +9,9 @@ See-your-Chingu-homepage-for-what-project-to-build -> https://chingu.io/ | Solo 
 This project is a great opportunity to develop a clean and modern webpage. The Favorite Fonts app will be completed across tiers, with each tier adding a new level of complexity. You are currently on the Tier 1 repo. You'll be responsible for coding the HTML, CSS, and JavaScript to get the structure, styling, and some basic functionality up and running.
 
 No Frameworks, Libraries, or Code Generators May Be Used In This Tier
+#### LIVE LINK : https://chingu-solo.github.io/solo-koala-51/
+
+![Favorite Fonts Demo](fav-fonts.gif)
 
 **Requirements**
 
