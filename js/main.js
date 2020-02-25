@@ -61,7 +61,9 @@ function reset() {
       .querySelector("img")
       .setAttribute("src", "images/dark-paint-icon.svg");
     viewImage.src = "images/dark-list-view-icon.svg";
-    $resetBtn.querySelector("img");
+    $resetBtn
+      .querySelector("img")
+      .setAttribute("src", "images/dark-reset-icon.svg");
   });
 }
 
