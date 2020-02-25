@@ -167,7 +167,6 @@ function resetFontSize() {
 }
 
 // Slider Functionality
-
 let $slider = document.querySelector("#slider");
 let $fontOption = document.querySelector("#font-size option");
 
@@ -177,6 +176,8 @@ $slider.oninput = function() {
 
   Array.from($textPreview).forEach(text => {
     text.style.fontSize = sliderFontSize;
+    $selectFont.options[$selectFont.selectedIndex].innerHTML = sliderFontSize;
+    $selectFont.options[$selectFont.selectedIndex].value = sliderFontSize;
   });
 };
 
