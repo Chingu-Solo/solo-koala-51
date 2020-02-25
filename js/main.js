@@ -169,12 +169,18 @@ function resetFontSize() {
 // Slider Functionality
 
 let $slider = document.querySelector("#slider");
-let $fontSize = document.querySelector("#font-size option");
+let $fontOption = document.querySelector("#font-size option");
 
 $slider.oninput = function() {
-  $fontSize.innerHTML = this.value + "px";
+  let sliderFontSize = $selectFont.options[$selectFont.selectedIndex].innerHTML;
+  sliderFontSize = this.value + "px";
+
+  Array.from($textPreview).forEach(text => {
+    text.style.fontSize = sliderFontSize;
+  });
 };
 
+$slider.value = 40;
 $selectFont.onchange = () => {
   if ($selectFont.value !== "8px") {
     let $fontOption = $selectFont.value;
@@ -189,6 +195,7 @@ $slider.addEventListener("mousemove", () => {
 
 function updateSlider() {
   let fontValue = $slider.value;
+  // console.log(fontValue);
   let percentage = (fontValue / 300) * 100;
   let color =
     "linear-gradient(90deg, rgb(223, 42, 42)" +
