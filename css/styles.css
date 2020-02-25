@@ -93,6 +93,7 @@ body::before {
 }
 
 .google-logo-left {
+  display: inline-block;
   vertical-align: middle;
 }
 
@@ -475,8 +476,10 @@ article {
   font-weight: 300;
   display: flex;
   justify-content: center;
+  align-items: center;
   outline: none;
-  background-color: white;
+  border: 0;
+  background-color: #f1f1f1;
   color: #5f6365;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
@@ -539,7 +542,7 @@ article {
     justify-content: start;
     transform: translateX(-100%);
     box-shadow: 4px 4px 12px 2px rgba(0, 0, 0, 0.14);
-    transition: transform 0.4s ease-in;
+    transition: transform 0.4s ease;
   }
 
   .header-nav.is-active {
