@@ -45,6 +45,9 @@ function reset() {
     returnDefaultFonts();
     $searchInput.value = "";
     $customText.value = "";
+    $slider.value = 40;
+    updateSlider();
+    $selectFont.options[$selectFont.selectedIndex].innerHTML = "40px";
     $searchCloseBtn.style.display = "none";
     $searchBtn
       .querySelector("img")
@@ -58,9 +61,7 @@ function reset() {
       .querySelector("img")
       .setAttribute("src", "images/dark-paint-icon.svg");
     viewImage.src = "images/dark-list-view-icon.svg";
-    $resetBtn
-      .querySelector("img")
-      .setAttribute("src", "images/dark-reset-icon.svg");
+    $resetBtn.querySelector("img");
   });
 }
 
@@ -196,7 +197,6 @@ $slider.addEventListener("mousemove", () => {
 
 function updateSlider() {
   let fontValue = $slider.value;
-  // console.log(fontValue);
   let percentage = (fontValue / 300) * 100;
   let color =
     "linear-gradient(90deg, rgb(223, 42, 42)" +
